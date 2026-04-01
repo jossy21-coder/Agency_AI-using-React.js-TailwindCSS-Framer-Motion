@@ -178,7 +178,7 @@ This project is licensed under the MIT License.
 
 ## 💡 Author
 
-**Your Name**
+**Yosef Mihiret**
 GitHub: [https://github.com/jossy21-coder](https://github.com/jossy21-coder)
 
 ---
