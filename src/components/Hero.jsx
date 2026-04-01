@@ -1,6 +1,6 @@
 import React from 'react'
 import assets from '../assets/assets'
-import { Motion } from 'motion/react';
+import { motion } from "framer-motion";
 
 
 const Hero = () => {
@@ -9,7 +9,7 @@ const Hero = () => {
       id="hero"
       className="flex flex-col items-center gap-6 py-20 px-4 sm:px-12 lg:px-24 xl:px-40 text-center w-full overflow-hidden text-gray-700 dark:text-white"
     >
-      <Motion.div
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.7 }}
@@ -42,9 +42,9 @@ const Hero = () => {
         />
 
         <p className="text-xs font-medium">Trusted by 10k+ people</p>
-      </Motion.div>
+      </motion.div>
 
-      <Motion.h1
+      <motion.h1
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.8 }}
@@ -56,9 +56,9 @@ const Hero = () => {
           digital
         </span>{" "}
         impact.
-      </Motion.h1>
+      </motion.h1>
 
-      <Motion.p
+      <motion.p
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 1 }}
@@ -67,7 +67,7 @@ const Hero = () => {
       >
         Creating meaningful connections and turning big ideas into interactive
         digital experiences.
-      </Motion.p>
+      </motion.p>
 
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}

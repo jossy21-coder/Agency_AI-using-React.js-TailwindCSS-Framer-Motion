@@ -1,9 +1,8 @@
 import React from 'react'
 import Title from './Title'
-import { FiArrowRight, FiInbox, FiMail, FiMessageCircle, FiMessageSquare, FiUser } from 'react-icons/fi'
-import { FaCircleUser } from 'react-icons/fa6';
+import { FiArrowRight, FiMail, FiUser } from 'react-icons/fi'
 import toast from 'react-hot-toast';
-import { Motion } from "motion/react";
+import { motion } from "framer-motion";
 
 
 const ContactUs = () => {
@@ -38,7 +37,7 @@ const ContactUs = () => {
   };
 
   return (
-    <Motion.div
+    <motion.div
       initial="hidden"
       whileInView="visible"
       transition={{ staggerChildren: 0.2 }}
@@ -62,7 +61,7 @@ const ContactUs = () => {
         <div>
           <p className="mb-2 text-sm font-medium">Your Name</p>
           <div className="flex pl-3 rounded-lg border border-gray-300 dark:border-gray-600">
-            <FaCircleUser className="mt-3.5" />
+            <FiUser className="mt-3.5" />
             <input
               name="name"
               type="text"
@@ -100,12 +99,12 @@ const ContactUs = () => {
 
         <button
           type="submit"
-          className="w-max flex gap-2 bg-primary text-white text-sm px-10 py-3 rounded-full cursor-pointer hover:scale-103 transition-all"
+          className="w-full sm:w-max flex justify-center gap-2 bg-primary text-white text-sm px-10 py-3 rounded-full cursor-pointer hover:scale-103 transition-all"
         >
           Submit <FiArrowRight className="mt-0.5 w-4 h-4" />
         </button>
       </motion.form>
-    </Motion.div>
+    </motion.div>
   );
 }
 

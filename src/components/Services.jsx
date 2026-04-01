@@ -2,7 +2,7 @@ import React from 'react'
 import Title from './Title'
 import ServiceCard from './ServiceCard';
 import assets from '../assets/assets';
-import { Motion } from "motion/react";
+import { motion } from "framer-motion";
 
 const Services = () => {
     
@@ -34,7 +34,7 @@ const servicesData = [
 ]
 
   return (
-    <Motion.div
+    <motion.div
       initial="hidden"
       whileInView="visible"
       transition={{ staggerChildren: 0.2 }}
@@ -47,12 +47,12 @@ const servicesData = [
         desc="From strategy to execution, we craft digital solutions that move your business forward."
       />
 
-      <div className="flex flex-col md:grid grid-cols-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 w-full max-w-6xl">
         {servicesData.map((service, index) => (
           <ServiceCard key={index} service={service} index={index} />
         ))}
       </div>
-    </Motion.div>
+    </motion.div>
   );
 }
 

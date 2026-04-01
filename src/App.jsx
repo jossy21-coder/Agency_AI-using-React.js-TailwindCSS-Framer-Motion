@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import TrustedBy from './components/TrustedBy'
@@ -10,20 +10,21 @@ import { Toaster } from 'react-hot-toast'
 import Footer from './components/Footer'
 
 const App = () => {
-
-  const [theme, setTheme] = useState(localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light')
-
+  useEffect(() => {
+    document.documentElement.classList.add("dark");
+  }, []);
+  
   return (
-    <div className='dark:bg-black relative'>
+    <div className='bg-white dark:bg-black min-h-screen transition-colors'>
       <Toaster />
-      <Navbar theme={theme} setTheme={setTheme} />
+      <Navbar />
       <Hero />
       <TrustedBy />
       <Services />
       <OurWork />
       <Teams />
       <ContactUs />
-      <Footer theme={theme} />
+      <Footer />
     </div>
   )
 }

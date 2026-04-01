@@ -3,7 +3,7 @@ import assets from '../assets/assets'
 import ThemeToggle from './ThemeToggle'
 import { FiArrowRight, FiMenu } from 'react-icons/fi';
 import { RiCloseFill } from 'react-icons/ri';
-import { Motion } from 'motion/react';
+import { motion } from "framer-motion";
 
 
 export default function Navbar() {
@@ -11,7 +11,7 @@ export default function Navbar() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
-    <Motion.nav
+    <motion.nav
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}  className="flex justify-between items-center px-4 sm:px-12 lg:px-24 xl:px-40 py-4 sticky top-0 z-20 backdrop-blur-xl font-medium bg-white/50 dark:bg-gray-900/70">
@@ -23,7 +23,7 @@ export default function Navbar() {
       />
 
       <div
-        className={`text-gray-700 dark:text-white sm:text-sm ${!sidebarOpen ? "max-sm:w-0 overflow-hidden" : "max-sm:w-60 max-sm:pl-10"} max-sm:fixed top-0 bottom-0 right-0 max-sm:min-h-screen max-sm:h-full max-sm:flex-col max-sm:bg-primary max-sm:text-white max-sm:pt-20 flex sm:items-center gap-5 transition-all`}
+        className={`text-gray-700 dark:text-white sm:text-sm ${!sidebarOpen ? "max-sm:w-0 overflow-hidden" : "max-sm:w-3/4 max-sm:pl-10"} max-sm:fixed top-0 bottom-0 right-0 max-sm:min-h-screen max-sm:h-full max-sm:flex-col max-sm:bg-primary max-sm:text-white max-sm:pt-20 flex sm:items-center gap-5 transition-all`}
       >
         <RiCloseFill
           className="w-8 h-8 absolute right-4 top-4 sm:hidden cursor-pointer"
@@ -78,6 +78,6 @@ export default function Navbar() {
           Connect <FiArrowRight className='w-4 h-4' />
         </a>
       </div>
-    </Motion.nav>
+    </motion.nav>
   );
 }

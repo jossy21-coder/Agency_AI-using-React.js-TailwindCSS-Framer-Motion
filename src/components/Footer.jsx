@@ -1,11 +1,11 @@
 import React from 'react'
 import assets from '../assets/assets';
 import { FiFacebook, FiInstagram, FiLinkedin, FiTwitter } from 'react-icons/fi';
-import { Motion } from "motion/react";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <Motion.div
+    <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
@@ -13,8 +13,8 @@ const Footer = () => {
       className="bg-slate-50 dark:bg-gray-900 pt-10 sm:pt-10 mt-20 sm:mt-40 px-4 sm:px-10 lg:px-24 xl:px-40"
     >
       {/* footer top */}
-      <div className="flex justify-between lg:items-center max-lg:flex-col gap-10">
-        <Motion.div
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <motion.div
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -54,8 +54,8 @@ const Footer = () => {
               </a>
             </li>
           </ul>
-        </Motion.div>
-        <Motion.div
+        </motion.div>
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -80,12 +80,12 @@ const Footer = () => {
               Subscribe
             </button>
           </div>
-        </Motion.div>
+        </motion.div>
       </div>
       <hr className="border-gray-300 dark:border-gray-600 my-6" />
 
       {/* footer bottom */}
-      <Motion.div
+      <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.4 }}
@@ -107,8 +107,8 @@ const Footer = () => {
             <FiLinkedin className="w-5 h-5 hover:-translate-y-1.5 text-primary" />
           </a>
         </div>
-      </Motion.div>
-    </Motion.div>
+      </motion.div>
+    </motion.div>
   );
 }
 

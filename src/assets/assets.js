@@ -13,10 +13,10 @@ import profile10 from "./images/profile28.webp";
 import profile11 from "./images/profile29.webp";
 import profile12 from "./images/profile30.webp";
 import microsoft_logo from './images/microsoft.webp';
-import amazon_logo from './images/amazon.webp';
-import google_logo from './images/google.webp';
-import alibaba_logo from './images/alibaba.webp';
-import walmart_logo from './images/walmart.webp';
+import amazon_logo from './images/amazon.png';
+import google_logo from './images/google.png';
+import ford_logo from './images/ford.png';
+import reebok_logo from './images/reebok.png';
 import content_marketing from './images/content marketing.webp';
 import content_writing from './images/content writing.webp';
 import advertising from './images/advertising.webp';
@@ -29,8 +29,8 @@ export const company_logos = [
   microsoft_logo,
   amazon_logo,
   google_logo,
-  alibaba_logo,
-  walmart_logo,
+  ford_logo,
+  reebok_logo,
 ]
 
 const assets = {

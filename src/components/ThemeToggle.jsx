@@ -2,38 +2,38 @@ import { useState, useEffect } from "react";
 import { FiMoon, FiSun } from "react-icons/fi";
 
 export default function ThemeToggle() {
-    const [dark, setDark] = useState(() => {
-        return localStorage.getItem("theme") === "dark";
-    });
+  const getInitialTheme = () => {
+    const saved = localStorage.getItem("theme");
+    if (saved) return saved === "dark";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  };
 
-    useEffect(() => {
-        const theme = localStorage.getItem("theme");
-        const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [dark, setDark] = useState(getInitialTheme);
 
-        const shouldUseDark = theme === "dark" || (!theme && prefersDarkMode);
+  useEffect(() => {
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [dark]);
 
-        setDark(shouldUseDark);
-        
-        if (shouldUseDark) {
-            document.documentElement.classList.add("dark");
-        } else {
-            document.documentElement.classList.remove("dark");
-        }
-    }, []);
+  useEffect(() => {
+    if (dark) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [dark]);
 
-    useEffect(() => {
-        if (dark) {
-            document.documentElement.classList.add("dark");
-            localStorage.setItem("theme", "dark");
-        } else {
-            document.documentElement.classList.remove("dark");
-        }
-        localStorage.setItem("theme", "light");
-    }, [dark]);
-
-    return (
-        <button onClick={() => setDark(prev => !prev)} className="size-8 p-1.5 dark:text-yellow-400 cursor-pointer border border-gray-500 rounded-full">
-            {dark ? <FiSun /> : <FiMoon className="text-black" />}
-        </button>
-    );
+  return (
+    <button
+      onClick={() => setDark((prev) => !prev)}
+      className="size-8 p-1.5 border border-gray-500 rounded-full cursor-pointer dark:text-yellow-400"
+    >
+      {dark ? <FiSun /> : <FiMoon className="text-black" />}
+    </button>
+  );
 }

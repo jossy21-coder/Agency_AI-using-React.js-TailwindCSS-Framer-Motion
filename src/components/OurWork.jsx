@@ -1,7 +1,7 @@
 import React from 'react'
 import Title from './Title'
 import assets from '../assets/assets';
-import { Motion } from "motion/react";
+import { motion } from "framer-motion";
 
 const OurWork = () => {
 
@@ -28,7 +28,7 @@ const OurWork = () => {
   
 
   return (
-    <Motion.div
+    <motion.div
       initial="hidden"
       whileInView="visible"
       transition={{ staggerChildren: 0.2 }}
@@ -41,7 +41,7 @@ const OurWork = () => {
         desc="From strategy to execution, we craft digital solutions that move your business forward."
       />
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
         {workData.map((work, index) => (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -58,11 +58,11 @@ const OurWork = () => {
               loading="lazy"
             />
             <h3 className="mt-3 mb-2 text-lg font-semibold">{work.title}</h3>
-            <p className="text-sm opacity-60 w-5/6">{work.description}</p>
+            <p className="text-sm opacity-60">{work.description}</p>
           </motion.div>
         ))}
       </div>
-    </Motion.div>
+    </motion.div>
   );
 }
 

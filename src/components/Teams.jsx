@@ -1,7 +1,7 @@
 import React from 'react'
 import Title from './Title'
 import assets from '../assets/assets';
-import { Motion } from "motion/react";
+import { motion } from "framer-motion";
 
 const Teams = () => {
 
@@ -49,7 +49,7 @@ const Teams = () => {
     ];
 
   return (
-    <Motion.div
+    <motion.div
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
@@ -62,7 +62,7 @@ const Teams = () => {
 
       <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5">
         {teamData.map((team, index) => (
-          <Motion.div
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
@@ -80,10 +80,10 @@ const Teams = () => {
               <h3 className="font-bold text-sm">{team.name}</h3>
               <p className="text-xs opacity-60">{team.title}</p>
             </div>
-          </Motion.div>
+          </motion.div>
         ))}
       </div>
-    </Motion.div>
+    </motion.div>
   );
 }
 
